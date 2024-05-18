@@ -1,5 +1,7 @@
 PyYAML
-torch>=1.9.0
+torch==1.12.1
+torchvision==0.13.1
+torchaudio==0.12.1
 numpy>=1.17
 scipy>=1.2.1
 prefetch_generator>=1.0.1

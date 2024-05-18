@@ -82,3 +82,9 @@ hivemind/proto/*_pb2*
 
 # libp2p-daemon binary
 hivemind/hivemind_cli/p2pd
+
+# venv
+p3.8-venv/*
+
+# data
+examples/albert/data/*

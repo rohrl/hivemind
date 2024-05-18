@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 
 import time
 from dataclasses import asdict, dataclass, field
@@ -7,7 +7,7 @@ from typing import Optional
 
 import requests
 import torch
-import wandb
+# import wandb
 from torch_optimizer import Lamb
 from transformers import AlbertConfig, AlbertForPreTraining, HfArgumentParser, get_linear_schedule_with_warmup
 
@@ -172,7 +172,8 @@ if __name__ == "__main__":
     log_visible_maddrs(dht.get_visible_maddrs(), only_p2p=monitor_args.use_ipfs)
 
     if monitor_args.wandb_project is not None:
-        wandb.init(project=monitor_args.wandb_project)
+        pass
+        # wandb.init(project=monitor_args.wandb_project)
 
     current_step = 0
     if monitor_args.store_checkpoints:
@@ -208,15 +209,16 @@ if __name__ == "__main__":
                 logger.info(f"Step #{current_step}\tloss = {current_loss:.5f}")
 
                 if monitor_args.wandb_project is not None:
-                    wandb.log(
-                        {
-                            "loss": current_loss,
-                            "alive peers": alive_peers,
-                            "samples": num_samples,
-                            "performance": sum_perf,
-                            "step": latest_step,
-                        }
-                    )
+                    pass
+                    # wandb.log(
+                    #     {
+                    #         "loss": current_loss,
+                    #         "alive peers": alive_peers,
+                    #         "samples": num_samples,
+                    #         "performance": sum_perf,
+                    #         "step": latest_step,
+                    #     }
+                    # )
 
                 if monitor_args.store_checkpoints:
                     if checkpoint_handler.is_time_to_save_state(current_step):
