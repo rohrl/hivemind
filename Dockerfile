@@ -25,7 +25,7 @@ RUN echo `python3.8 -m pip --version`
 
 COPY . hivemind/
 
-RUN python3.8 -m pip install --no-cache-dir -r hivemind/requirements.txt 
+RUN python3.8 -m pip install --default-timeout=10000 --no-cache-dir -r hivemind/requirements.txt 
 RUN python3.8 -m pip install --no-cache-dir -r hivemind/requirements-dev.txt
 RUN python3.8 -m pip install --no-cache-dir -r hivemind/examples/albert/requirements.txt 
 RUN rm -rf ~/.cache/pip
